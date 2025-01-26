@@ -1,0 +1,239 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fc;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    background: linear-gradient(135deg, #fdfbfb, #ebedee);
+    transition: background 0.5s ease;
+}
+
+body:hover {
+    background: linear-gradient(135deg, #ebedee, #fdfbfb);
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Link Styles */
+a {
+    font-size: 1rem;
+    color: #4CAF50;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Container */
+.question-container {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s forwards;
+}
+
+/* Animation for the question container */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Question Styles */
+.question-item {
+    display: none; /* Initially hide all questions */
+    margin-bottom: 20px;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.question-item.active {
+    display: block; /* Only show active question */
+}
+
+/* Smooth fade-in for questions */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Question Text */
+h4 {
+    font-size: 1.25rem;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+/* Labels and Inputs */
+label {
+    display: block;
+    font-size: 1.125rem;
+    margin-bottom: 8px;
+    color: #555;
+    transition: color 0.3s ease;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin-top: 8px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
+}
+
+input[type="text"]:hover {
+    border-color: #4CAF50;
+}
+
+input[type="text"]:focus, input[type="text"]:hover {
+    background-color: #fff;
+}
+
+/* Buttons */
+button {
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 5px;
+    width: 150px;
+    font-weight: 600;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Disabled Button */
+button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Hover Effects */
+button:hover:not(:disabled) {
+    opacity: 0.9;
+    transform: translateY(-3px);
+}
+
+/* Buttons */
+.button {
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 5px;
+    width: 150px;
+    font-weight: 600;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    background-color: #007BFF;
+    color: white;
+}
+
+.button a {
+     
+}
+
+/* Hover Effects */
+.button:hover {
+    opacity: 0.9;
+    transform: translateY(-3px);
+    text-decoration: none;
+}
+
+.submit-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.next-btn, .prev-btn {
+    background-color: #007BFF;
+    color: white;
+}
+
+.submit-btn:hover {
+    background-color: #45a049;
+}
+
+.next-btn:hover, .prev-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Navigation Buttons */
+.navigation-buttons {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .question-container {
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .question-item {
+        margin-bottom: 15px;
+    }
+
+    label {
+        font-size: 1rem;
+    }
+
+    button {
+        width: 100%;
+    }
+}

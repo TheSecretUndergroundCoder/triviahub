@@ -1,0 +1,800 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+body {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    background: linear-gradient(145deg, #f7f7f7, #e5e9f0);
+    color: #333;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    transition: background 0.6s ease-in-out; /* Smooth background transition */
+}
+
+body:hover {
+    background: linear-gradient(145deg, #e5e9f0, #f7f7f7); /* Subtle background shift on hover */
+}
+
+/* General Container Styling for Glassmorphism */
+.glass {
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.glass:hover {
+    transform: translateY(-10px); /* Slight lift on hover */
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.2);
+}
+
+/* Taskbar */
+.taskbar {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.5s ease;
+}
+
+.taskbar:hover {
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.25);
+}
+
+/* Buttons in the taskbar */
+.taskbar .button {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    color: white;
+    padding: 14px 30px;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.4s ease, transform 0.2s ease; /* Transform added for interaction */
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.taskbar .button:hover {
+    background: linear-gradient(135deg, #0072ff, #00c6ff);
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.taskbar .button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 200%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: skewX(-45deg);
+    transition: 0.5s;
+}
+
+.taskbar .button:hover::before {
+    left: 150%;
+}
+
+/* Bordered form */
+form {
+    border: none;
+    width: 60%;
+    margin: auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease-in-out, box-shadow 0.5s ease;
+}
+
+form:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password], input[type=email] {
+    width: 100%;
+    padding: 14px 20px;
+    margin: 12px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 25px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type=text]:focus, input[type=password]:focus, input[type=email]:focus {
+    border-color: #00c6ff;
+    box-shadow: 0 0 10px rgba(0, 198, 255, 0.5);
+    transform: scale(1.02); /* Slight enlargement on focus */
+}
+
+/* Set a style for all buttons */
+button {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    color: white;
+    padding: 16px 30px;
+    margin: 10px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 25px;
+    font-size: 16px;
+    transition: all 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #0072ff, #00c6ff);
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+button:active {
+    transform: scale(0.98); /* Button click effect */
+}
+
+/* Set a style for all buttons */
+.button {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    color: white;
+    padding: 16px 30px;
+    margin: 10px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 25px;
+    font-size: 16px;
+    transition: all 0.3s ease, transform 0.3s ease;
+}
+
+.button:hover {
+    background: linear-gradient(135deg, #0072ff, #00c6ff);
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+.button:active {
+    transform: scale(0.98); /* Button click effect */
+}
+
+/* Extra style for the cancel button (red) */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #ff6b6b;
+    border-radius: 25px;
+    transition: background 0.3s ease;
+}
+
+.cancelbtn:hover {
+    background-color: #ff4949;
+}
+
+/* Avatar image */
+img.avatar {
+    width: 30%;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+img.avatar:hover {
+    transform: rotate(5deg) scale(1.1); /* Subtle rotation and scale on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer links styling */
+.footer-links a {
+    list-style: none;
+    padding: 10px;
+    margin: 10px;
+    text-decoration: none;
+    color: #0072ff;
+    font-size: 16px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #00c6ff;
+    text-decoration: underline;
+    transform: scale(1.1); /* Slight scale on hover */
+}
+
+/* Underline animation for links */
+.underline-animation {
+    text-decoration: none;
+    color: #0072ff;
+    font-size: 18px;
+    position: relative;
+    padding-bottom: 5px;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+.underline-animation::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #00c6ff;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.underline-animation:hover {
+    color: #00c6ff;
+}
+
+.underline-animation:hover::after {
+    transform: scaleX(1);
+}
+
+/* Quiz Results Table */
+table {
+    width: 80%;
+    margin: auto;
+    border-collapse: collapse;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(8px);
+    transition: transform 0.4s ease, box-shadow 0.5s ease;
+}
+
+table:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.2);
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+}
+
+/* Chart container */
+.chart-container {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(8px);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.chart-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+.footer {
+    background-color: #f1f1f1;
+    padding: 30px;
+    margin-top: 50px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    color: #0072ff;
+    transition: background 0.3s ease, transform 0.4s ease;
+}
+
+.footer:hover {
+    background-color: #e1e1e1;
+    transform: scale(1.02);
+}
+
+
+.profileImage img {
+    max-width: 2px;
+    max-height: 5px;
+}
+
+.required_info span {
+    color: red;
+    font-weight: 500;
+}
+
+.required_info {
+    color: red;
+}
+
+.extra-info {
+    padding: 1.5%;
+    margin: 5px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+body {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    background: linear-gradient(145deg, #f7f7f7, #e5e9f0);
+    color: #333;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    transition: background 0.6s ease-in-out; /* Smooth background transition */
+}
+
+body:hover {
+    background: linear-gradient(145deg, #e5e9f0, #f7f7f7); /* Subtle background shift on hover */
+}
+
+/* General Container Styling for Glassmorphism */
+.glass {
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.glass:hover {
+    transform: translateY(-10px); /* Slight lift on hover */
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.2);
+}
+
+/* Taskbar */
+.taskbar {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.5s ease;
+}
+
+.taskbar:hover {
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.25);
+}
+
+/* Buttons in the taskbar */
+.taskbar .button {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    color: white;
+    padding: 14px 30px;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.4s ease, transform 0.2s ease; /* Transform added for interaction */
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.taskbar .button:hover {
+    background: linear-gradient(135deg, #0072ff, #00c6ff);
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.taskbar .button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 200%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: skewX(-45deg);
+    transition: 0.5s;
+}
+
+.taskbar .button:hover::before {
+    left: 150%;
+}
+
+/* Bordered form */
+form {
+    border: none;
+    width: 60%;
+    margin: auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease-in-out, box-shadow 0.5s ease;
+}
+
+form:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password], input[type=email] {
+    width: 100%;
+    padding: 14px 20px;
+    margin: 12px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 25px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type=text]:focus, input[type=password]:focus, input[type=email]:focus {
+    border-color: #00c6ff;
+    box-shadow: 0 0 10px rgba(0, 198, 255, 0.5);
+    transform: scale(1.02); /* Slight enlargement on focus */
+}
+
+/* Set a style for all buttons */
+button {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    color: white;
+    padding: 16px 30px;
+    margin: 10px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 25px;
+    font-size: 16px;
+    transition: all 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #0072ff, #00c6ff);
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+button:active {
+    transform: scale(0.98); /* Button click effect */
+}
+
+/* Extra style for the cancel button (red) */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #ff6b6b;
+    border-radius: 25px;
+    transition: background 0.3s ease;
+}
+
+.cancelbtn:hover {
+    background-color: #ff4949;
+}
+
+/* Avatar image */
+img.avatar {
+    width: 30%;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+img.avatar:hover {
+    transform: rotate(5deg) scale(1.1); /* Subtle rotation and scale on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer links styling */
+.footer-links a {
+    list-style: none;
+    padding: 10px;
+    margin: 10px;
+    text-decoration: none;
+    color: #0072ff;
+    font-size: 16px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #00c6ff;
+    text-decoration: underline;
+    transform: scale(1.1); /* Slight scale on hover */
+}
+
+/* Underline animation for links */
+.underline-animation {
+    text-decoration: none;
+    color: #0072ff;
+    font-size: 18px;
+    position: relative;
+    padding-bottom: 5px;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+.underline-animation::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #00c6ff;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.underline-animation:hover {
+    color: #00c6ff;
+}
+
+.underline-animation:hover::after {
+    transform: scaleX(1);
+}
+
+/* Quiz Results Table */
+table {
+    width: 80%;
+    margin: auto;
+    border-collapse: collapse;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(8px);
+    transition: transform 0.4s ease, box-shadow 0.5s ease;
+}
+
+table:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.2);
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+}
+
+/* Chart container */
+.chart-container {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(8px);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.chart-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+.footer {
+    background-color: #f1f1f1;
+    padding: 30px;
+    margin-top: 50px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    color: #0072ff;
+    transition: background 0.3s ease, transform 0.4s ease;
+}
+
+.footer:hover {
+    background-color: #e1e1e1;
+    transform: scale(1.02);
+}
+
+
+.profileImage img {
+    max-width: 2px;
+    max-height: 5px;
+}
+
+.required_info span {
+    color: red;
+    font-weight: 500;
+}
+
+.required_info {
+    color: red;
+}
+
+.extra-info {
+    padding: 1.5%;
+    margin: 5px;
+}
+
+/* General container for the analysis section */
+.analysis-container {
+    display: flex;
+    justify-content: center; /* Centers the sections horizontally */
+    align-items: flex-start; /* Aligns sections vertically at the top */
+    gap: 40px; /* Increased gap for better spacing */
+    padding: 40px;
+    flex-wrap: wrap; /* Allows the sections to wrap on smaller screens */
+    background: linear-gradient(135deg, #e3f2fd, #ffffff); /* Subtle gradient for a modern feel */
+    border-radius: 15px; /* Softer corners for the container */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1); /* Enhanced shadow for depth */
+    animation: fadeIn 1s ease-in-out; /* Smooth entrance animation */
+}
+
+/* Keyframes for the fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Shared styles for both sections */
+.weak-areas, .suggestions {
+    width: 48%; /* Ensures two sections are evenly distributed */
+    max-width: 600px; /* Limits the size for larger screens */
+    padding: 25px;
+    border-radius: 15px; /* Smooth rounded edges */
+    background: #ffffff; /* Clean white background for readability */
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08); /* Softer shadow for a modern feel */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; /* Hover animation */
+    overflow: hidden; /* Avoids overflow on rounded corners */
+    animation: slideUp 0.8s ease-in-out; /* Entrance animation */
+}
+
+/* Keyframes for slide-up animation */
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.weak-areas:hover, .suggestions:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Emphasized shadow */
+    background: linear-gradient(135deg, #f5f5f5, #ffffff); /* Slight gradient on hover */
+}
+
+/* Headings for both sections */
+.weak-areas h4, .suggestions h4 {
+    font-size: 2rem; /* Larger font size for headings */
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-transform: uppercase; /* Consistent heading style */
+    letter-spacing: 1.5px; /* Adds subtle spacing for a modern look */
+    text-align: center;
+    animation: fadeIn 1.2s ease-in-out; /* Smooth heading animation */
+}
+
+/* Weak areas specific styles */
+.weak-areas h4 {
+    color: #e63946; /* Vibrant red for weak areas */
+    
+}
+
+.weak-area-item {
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 12px; /* Larger rounded corners */
+    background: #fbe4e4; /* Softer pastel red tone */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for items */
+    font-size: 1.1rem;
+    position: relative;
+    animation: fadeInLeft 0.8s ease-in-out; /* Slide-in animation */
+}
+
+/* Keyframes for fade-in from the left */
+@keyframes fadeInLeft {
+    from {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.weak-area-item strong {
+    color: #e63946; /* Highlights important text */
+}
+
+.weak-area-item span {
+    color: #6c757d; /* Neutral gray for better readability */
+}
+
+/* Suggestions specific styles */
+.suggestions h4 {
+    color: #2a9d8f; /* Vibrant green for positivity */
+    text-decoration: underline;
+}
+
+.suggestions ul {
+    list-style: none;
+    padding: 0;
+}
+
+.suggestions li {
+    margin-bottom: 15px;
+    position: relative;
+    animation: fadeInRight 0.8s ease-in-out; /* Slide-in animation */
+}
+
+/* Keyframes for fade-in from the right */
+@keyframes fadeInRight {
+    from {
+        transform: translateX(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.suggestions a.resource-link {
+    font-size: 1.2rem;
+    color: #0077cc; /* Recognizable blue for links */
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease, font-weight 0.3s ease; /* Smooth link animation */
+}
+
+.suggestions a.resource-link:hover {
+    color: #004999; /* Darker blue on hover */
+    text-decoration: underline;
+    font-weight: bold;
+    animation: pulse 0.6s infinite; /* Pulse effect */
+}
+
+/* Keyframes for pulse animation */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .analysis-container {
+        flex-direction: column; /* Stack sections vertically */
+        padding: 20px;
+    }
+
+    .weak-areas, .suggestions {
+        width: 100%; /* Full width on smaller screens */
+        margin-bottom: 20px; /* Adds spacing between stacked sections */
+    }
+}
+

@@ -1,0 +1,188 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Container Styles */
+.container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 80%;
+    max-width: 900px;
+}
+
+/* Table Styles for Admin Page */
+.contact-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+.contact-table th, .contact-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.contact-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Flag Icon */
+.flag-icon {
+    font-size: 1.5rem;
+    color: red;
+}
+
+/* Status Dot */
+.status-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/* Action Buttons */
+.delete-button, .flag-button, .status-select {
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.delete-button {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.delete-button:hover {
+    background-color: #c0392b;
+}
+
+.flag-button {
+    background-color: #f39c12;
+    color: white;
+}
+
+.flag-button:hover {
+    background-color: #e67e22;
+}
+
+.status-select {
+    background-color: #ecf0f1;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+/* Back Link */
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.1rem;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* Style for the message preview */
+.message-preview {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.5;
+    max-width: 300px; /* Limit width of the preview */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Show ellipsis when text overflows */
+}
+
+/* Style for the full message, hidden by default */
+.message-full {
+    display: none;
+    color: #333;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-top: 10px;
+    max-width: 90%; /* Limit the full message width */
+}
+
+/* Button to toggle full message */
+.toggle-message-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-message-btn:hover {
+    background-color: #45a049;
+}
+
+.toggle-message-btn:focus {
+    outline: none;
+}
+
+/* Handle the expanded state of the message preview */
+.message-preview.expanded {
+    max-width: none; /* Remove width limitation when expanded */
+    white-space: normal; /* Allow text to wrap */
+}
+
+.message-preview.expanded .toggle-message-btn {
+    display: none; /* Hide Read More button when expanded */
+}
+
+.message-preview.expanded + .message-full {
+    display: block; /* Show full message when expanded */
+}
+
+/* Styles for table rows with expandable message functionality */
+.contact-table td {
+    word-wrap: break-word; /* Ensure long messages break */
+    max-width: 250px; /* Restrict the message width */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-table th, .contact-table td {
+        font-size: 12px; /* Smaller font size for mobile */
+    }
+
+    .contact-table td {
+        padding: 8px; /* Adjust padding for mobile */
+    }
+
+    .container {
+        width: 95%; /* Make container width more responsive */
+    }
+
+    h1 {
+        font-size: 1.5rem; /* Adjust heading size for mobile */
+    }
+}

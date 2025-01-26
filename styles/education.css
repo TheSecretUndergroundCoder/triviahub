@@ -1,0 +1,220 @@
+/* General Page Styles */
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: #f0f8ff; /* Light blue for a fun and engaging background */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    box-sizing: border-box;
+}
+
+/* Container for the page content */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.container:hover {
+    transform: scale(1.01); /* Subtle scaling for engagement */
+}
+
+/* Section headers */
+h1, h2 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-size: 2rem;
+    text-align: center;
+}
+
+h1 {
+    color: #3498db; /* Vibrant blue for the main heading */
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #2ecc71; /* Green for secondary headings */
+}
+
+/* Buttons */
+.button {
+    text-decoration: none;
+    color: #3498db;
+    font-size: 18px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    background: rgba(52, 152, 219, 0.1);
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    background: #3498db;
+    color: #fff;
+}
+
+/* Table Styles */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.table th, .table td {
+    padding: 15px;
+    border: 1px solid #ddd;
+}
+
+.table th {
+    background: #2ecc71;
+    color: #fff;
+    font-weight: bold;
+}
+
+.table tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+.table tr:hover {
+    background: #e8f7ff; /* Highlight effect on hover */
+}
+
+/* Class Cards */
+.class-card {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    margin: 10px 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #f9f9f9, #f0f8ff); /* Subtle gradient for cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.class-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.class-card h3 {
+    margin: 0 0 10px;
+    font-size: 22px;
+    color: #3498db;
+}
+
+.class-card p {
+    margin: 0;
+    color: #7f8c8d;
+    font-size: 16px;
+}
+
+/* Forms */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #2c3e50;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+    margin-top: 6px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #3498db;
+    font-size: 18px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    background: rgba(52, 152, 219, 0.1);
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    background: #3498db;
+    color: #fff;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background: #3498db;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 8px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    h1, h2 {
+        font-size: 1.8rem;
+    }
+
+    .button {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .table {
+        font-size: 14px;
+    }
+
+    .class-card h3 {
+        font-size: 20px;
+    }
+
+    .class-card p {
+        font-size: 14px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 10px;
+    }
+}
