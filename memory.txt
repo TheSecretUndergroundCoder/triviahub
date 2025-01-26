@@ -1,0 +1,6 @@
+// Check if the user is authenticated
+if (!isset($_SESSION['authenticated']) || $_SESSION['authenticated'] !== true) {
+    // If not authenticated, redirect to the under-development page
+    header("Location: under-development.php");
+    exit();
+}
